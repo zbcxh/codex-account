@@ -1,0 +1,1 @@
+<template><el-result icon="warning" title="页面不存在" sub-title="请选择左侧功能，或返回可视化大屏。"><template #extra><RouterLink to="/"><el-button type="primary">返回总览</el-button></RouterLink></template></el-result></template>

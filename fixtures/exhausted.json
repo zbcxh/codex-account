@@ -1,0 +1,15 @@
+{
+  "source": "session_tail",
+  "collected_at": 0,
+  "account_id": "4b8895aa-3efa-4482-8d89-27a1c0000001",
+  "user_id": "user-jJsW2HIqlaqCf7SE9SvKU0001",
+  "plan_type": "pro",
+  "cli_version": "0.163.0-alpha.11",
+  "originator": "Codex Desktop",
+  "primary": { "used_percent": 100.0, "window_minutes": 10080, "resets_at": 0 },
+  "secondary": null,
+  "credits": { "has_credits": true, "unlimited": false, "balance": "19478.4499340000" },
+  "hit_limit": "weekly",
+  "source_seq": 73509889,
+  "last_session_mtime": 0
+}

@@ -1,0 +1,8 @@
+<script setup lang="ts">
+import {ref} from 'vue';import type {FormInstance,FormRules} from 'element-plus';import {ElMessage} from 'element-plus';import {useUI} from '../store';import {api} from '../api';import {validateForm} from '../forms';import SecretInput from './SecretInput.vue';
+const ui=useUI(),form=ref<FormInstance>(),model=ref({secret:''}),busy=ref(false),error=ref('');const rules:FormRules={secret:[{required:true,message:'请输入当前bootstrap管理口令',trigger:'blur'}]};
+/** 功能：只读校验管理授权，口令仅驻留内存；参数：无；返回值：异步完成。 */
+async function submit(){if(busy.value||!await validateForm(form.value))return;busy.value=true;error.value='';try{const result=await api.codes(model.value.secret);ui.credential(model.value.secret);ui.codes=result.codes;ui.codesLoaded=true;ui.authOpen=false;ElMessage.success('管理授权已确认，请继续操作');}catch(e){error.value=e instanceof Error?e.message:'授权失败';}finally{busy.value=false;}}
+/** 功能：关闭时清除输入，避免口令长驻表单；参数：无；返回值：无。 */
+function closed(){model.value.secret='';error.value='';form.value?.clearValidate();}
+</script><template><el-dialog v-model="ui.authOpen" title="管理员授权" width="460px" :close-on-click-modal="false" @closed="closed"><p class="muted">输入当前bootstrap管理口令。设备配对码不能用于管理，口令仅保存在当前页面内存。独立演示模式请使用 demo-admin-only，勿输入真实口令。</p><el-form ref="form" :model="model" :rules="rules" label-position="top" novalidate @submit.prevent="submit"><el-form-item label="当前管理口令" prop="secret"><SecretInput v-model="model.secret" autocomplete="current-password"/></el-form-item><el-alert v-if="error" :title="error" type="error" :closable="false" show-icon/></el-form><template #footer><el-button @click="ui.authOpen=false">取消</el-button><el-button type="primary" :loading="busy" @click="submit">确认授权</el-button></template></el-dialog></template>

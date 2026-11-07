@@ -1,0 +1,31 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": [
+    "src",
+    "index.html"
+  ],
+  "locale": "zh-CN",
+  "canonicalMap": "UX-CONTRACT.md",
+  "requiredCapabilities": [
+    "Select/Listbox",
+    "Date",
+    "Form",
+    "Scrollbar",
+    "Toast",
+    "CRUD"
+  ],
+  "ownership": {
+    "Select/Listbox": "authored",
+    "Date": "authored"
+  },
+  "commands": {
+    "typecheck": "npm run typecheck",
+    "unit": "npm test",
+    "build": "npm run build"
+  },
+  "requiredCommands": [
+    "typecheck",
+    "unit",
+    "build"
+  ]
+}

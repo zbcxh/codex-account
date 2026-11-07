@@ -1,0 +1,4 @@
+import {createRouter,createWebHashHistory} from 'vue-router';
+export const routes=[{path:'/',name:'overview',component:()=>import('./views/Overview.vue'),meta:{title:'可视化大屏',label:'运行态势'}},{path:'/accounts',component:()=>import('./views/Accounts.vue'),meta:{title:'账号额度'}},{path:'/devices',component:()=>import('./views/Devices.vue'),meta:{title:'设备监控'}},{path:'/mapping',component:()=>import('./views/Mapping.vue'),meta:{title:'账号映射'}},{path:'/access',component:()=>import('./views/Access.vue'),meta:{title:'接入管理'}},{path:'/settings',component:()=>import('./views/Settings.vue'),meta:{title:'系统设置'}},{path:'/:pathMatch(.*)*',component:()=>import('./views/NotFound.vue'),meta:{title:'页面不存在'}}];
+export const router=createRouter({history:createWebHashHistory(),routes,scrollBehavior:()=>({top:0})});
+router.afterEach(to=>{document.title=String(to.meta.title)+' · Codex 额度控制台';});

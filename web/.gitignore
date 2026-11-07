@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env.local
+.env.*.local
+*.log
+
+# 本地 UI 审计报告不是源码。
+premium-audit.json

@@ -1,0 +1,21 @@
+# Runtime data and credentials (never commit)
+server/data/
+server/server.config.json
+client/client.config.json
+**/auth.json*
+**/token*.bin
+**/accounts/
+**/spool/
+*.sqlite3*
+*.db*
+*.log*
+node_modules/
+*.before-*.json
+web/.idea/
+
+# Local panel deployment selector and compiled releases
+server/web-current.json
+server/web-releases/
+
+# 本机生成的客户端测试包，不纳入源码版本
+/releases/

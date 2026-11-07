@@ -1,0 +1,15 @@
+{
+  "source": "session_tail",
+  "collected_at": 0,
+  "account_id": null,
+  "user_id": null,
+  "plan_type": null,
+  "cli_version": "0.158.0",
+  "originator": "codex_cli_rs",
+  "primary": { "used_percent": 7.5, "window_minutes": 300, "resets_at": 0 },
+  "secondary": { "used_percent": 63.2, "window_minutes": 10080, "resets_at": 0 },
+  "credits": { "has_credits": false, "unlimited": false, "balance": null },
+  "hit_limit": null,
+  "source_seq": 12039,
+  "last_session_mtime": 0
+}

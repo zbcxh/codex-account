@@ -1,0 +1,4 @@
+bin/
+test-results.json
+# 隔离构建与故障注入输出不是采集器源码或分发内容。
+test-output/

@@ -1,0 +1,13 @@
+import {createApp} from 'vue';
+import {createPinia} from 'pinia';
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css';
+import 'element-plus/theme-chalk/dark/css-vars.css';
+import {router} from './router';
+import {initTheme} from './theme';
+import {initFontSize} from './font-size';
+import './style.css';
+import App from './App.vue';
+initTheme();
+initFontSize();
+createApp(App).use(createPinia()).use(router).use(ElementPlus).mount('#app');

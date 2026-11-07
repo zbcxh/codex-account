@@ -1,0 +1,1 @@
+<script setup lang="ts">defineProps<{title:string;note:string;eyebrow?:string}>();</script><template><div class="page-heading"><div><div class="eyebrow">{{eyebrow||'CODEX CONTROL SYSTEM'}}</div><h1>{{title}}</h1><p>{{note}}</p></div><div class="heading-actions"><slot/></div></div></template>
